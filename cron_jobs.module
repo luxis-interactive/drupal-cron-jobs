@@ -35,7 +35,7 @@ function cron_jobs_cars()
   */
 function cron_jobs_cron()
 {
-
+  Import::addItemsToQueue();
 }
 
 /**
@@ -44,12 +44,15 @@ function cron_jobs_cron()
   */
 function cron_jobs_cron_queue_info()
 {
-  $items['cron_jobs'] = array(
-    'worker callback' => 'cron_jobs_process_jobs'
+  $queues['cron_jobs'] = array(
+    'worker callback' => 'cron_jobs_process',
+    'time' => 15
   );
+
+  return $queues;
 }
 
-function cron_jobs_process_jobs()
+function cron_jobs_process()
 {
-
+  Import::processItemsOnQueue();
 }
