@@ -1,0 +1,7 @@
+name = 'Cron jobs with queues'
+description = 'Use cron jobs with queues on Drupal'
+package = 'Custom'
+version = '7.x-0.1'
+core = '7.x'
+files[] = 'include/Api.inc'
+files[] = 'include/Import.inc'

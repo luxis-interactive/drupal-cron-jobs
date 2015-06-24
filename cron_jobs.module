@@ -1,0 +1,52 @@
+<?php
+
+/**
+  * Implementing hook_menu().
+  *
+  */
+function cron_jobs_menu()
+{
+  $items = array();
+
+  $items['admin/content/import/cars'] = array(
+    'title' => 'Import cars',
+    'description' => 'Test cron jobs and queues',
+    'page callback' => 'cron_jobs_cars',
+    'access callback' => TRUE
+  );
+
+  return $items;
+}
+
+/**
+ * Page callback
+**/
+function cron_jobs_cars()
+{
+  
+}
+
+/**
+  * Implementing hook_cron().
+  *
+  */
+function cron_jobs_cron()
+{
+
+}
+
+/**
+  * Implementing hook_cron_queue_info().
+  *
+  */
+function cron_jobs_cron_queue_info()
+{
+  $items['cron_jobs'] = array(
+    'worker callback' => 'cron_jobs_process_jobs'
+  );
+}
+
+function cron_jobs_process_jobs()
+{
+
+}
