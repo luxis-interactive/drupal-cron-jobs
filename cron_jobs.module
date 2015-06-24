@@ -23,7 +23,10 @@ function cron_jobs_menu()
 **/
 function cron_jobs_cars()
 {
-  
+  $result = Import::getFromApi();
+
+  echo '<pre>'. print_r($result, true) .'</pre>';
+  die;
 }
 
 /**
